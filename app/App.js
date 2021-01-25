@@ -37,12 +37,14 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  count: state.countReducer.count,
-});
+const mapStateToProps = (state) => {
+  return {
+    count: state.countReducer.count
+  };
+};
 
 const mapDispatchToProps = (dispatch) => ({
-  callCounter: (count) => dispatch(changeCount(count)),
+  callCounter: (count) => dispatch(changeCount(count))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -29,17 +29,24 @@ build/
 local.properties
 *.iml
 
+# VS Code
+#
+.vscode/
+
 # node.js
 #
 node_modules/
 npm-debug.log
 yarn-error.log
+.prettierrc.js
+__tests__/__snapshots__/
 
 # BUCK
 buck-out/
 \.buckd/
 *.keystore
 !debug.keystore
+yarn.lock
 
 # fastlane
 #
