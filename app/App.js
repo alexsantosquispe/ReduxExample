@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 import { connect } from 'react-redux';
+// Local imports
 import { changeCount } from './actions/counts';
+import { globalStyles } from './styles/globalStyles';
 
 class App extends Component {
   constructor(props) {
@@ -26,27 +28,14 @@ class App extends Component {
   render() {
     const { count } = this.props;
     return (
-      <View style={styles.container}>
+      <View style={globalStyles.container}>
         <Button title="decrement" onPress={this.decrementCount} />
-        <Text style={styles.title}>{count}</Text>
+        <Text style={globalStyles.title}>{count}</Text>
         <Button title="increment" onPress={this.incrementCount} />
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-});
 
 const mapStateToProps = (state) => ({
   count: state.countReducer.count,
