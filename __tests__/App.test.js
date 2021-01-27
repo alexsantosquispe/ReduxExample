@@ -14,9 +14,19 @@ describe('Redux test', () => {
 
   beforeEach(() => {
     defaultStore = mockStore({
-      count: 0,
-      countReducer: {
-        count: 0
+      age: 0,
+      weight: 0,
+      height: 0,
+      gender: 'female',
+      bmiResult: 0,
+      isModalVisible: false,
+      counterReducer: {
+        age: 0,
+        weight: 0,
+        height: 0,
+        gender: 'female',
+        bmiResult: 0,
+        isModalVisible: false
       }
     });
 
