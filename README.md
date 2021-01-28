@@ -1,10 +1,8 @@
-# ReduxExample
+# ReduxExample (BMI Calculator)
 
 This is a single example using redux with react native
 
-![alt text](https://raw.githubusercontent.com/alexsantosquispe/ReduxExample/main/screenshots/bmi_calculator_1.png)
-
-![alt text](https://raw.githubusercontent.com/alexsantosquispe/ReduxExample/main/screenshots/bmi_calculator_2.png)
+![alt text](https://raw.githubusercontent.com/alexsantosquispe/ReduxExample/main/screenshots/bmi_calculator_1.png) | ![alt text](https://raw.githubusercontent.com/alexsantosquispe/ReduxExample/main/screenshots/bmi_calculator_2.png) |
 
 ## Installation
 
@@ -12,7 +10,7 @@ This is a single example using redux with react native
 npm install
 ```
 
-Or
+or
 
 ```bash
 yarn
@@ -24,7 +22,7 @@ yarn
 npx react-native start (you also can execute yarn start)
 ```
 
-Then
+then
 
 ```bash
 npx react-native run-android (yarn android)
