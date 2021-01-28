@@ -2,6 +2,10 @@
 
 This is a single example using redux with react native
 
+![alt text](https://raw.githubusercontent.com/alexsantosquispe/ReduxExample/main/screenshots/bmi_calculator_1.png)
+
+![alt text](https://raw.githubusercontent.com/alexsantosquispe/ReduxExample/main/screenshots/bmi_calculator_2.png)
+
 ## Installation
 
 ```bash
