@@ -8,9 +8,9 @@ const SliderCard = (props) => {
   const {
     title,
     value,
-    initValue = 10,
+    initValue = 0,
     minValue = 0,
-    maxValue = 200,
+    maxValue = 2,
     onChangeValue
   } = props;
 

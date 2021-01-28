@@ -1,4 +1,5 @@
 import * as Constants from '../constants';
+import * as Utils from '../utilities';
 
 const initialState = {
   age: 0,
@@ -24,7 +25,7 @@ const counterReducer = (state = initialState, action) => {
     case Constants.HEIGHT_COUNTER:
       return {
         ...state,
-        height: action.payload
+        height: Utils.roundNumber(action.payload, 2)
       };
     case Constants.GENDER_CHANGED:
       return {
@@ -32,9 +33,12 @@ const counterReducer = (state = initialState, action) => {
         gender: action.payload
       };
     case Constants.GET_BMI_RESULT:
+      const bmiResult = Utils.calculateBMI(state.weight, state.height);
+      const bmiDiagnostic = Utils.getBMIDiagnostic(bmiResult);
       return {
         ...state,
-        bmiResult: action.payload
+        bmiResult: bmiDiagnostic,
+        isModalVisible: true
       };
     case Constants.MODAL_VISIBILITY:
       return {
