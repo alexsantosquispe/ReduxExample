@@ -24,6 +24,7 @@ class App extends Component {
     this.decrementWeight = this.decrementWeight.bind(this);
     this.onHeightValueChanged = this.onHeightValueChanged.bind(this);
     this.onGenderSelected = this.onGenderSelected.bind(this);
+    this.getBMI = this.getBMI.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
   }
 
@@ -52,9 +53,8 @@ class App extends Component {
   }
 
   onHeightValueChanged(value) {
-    let { height, onChangeHeight } = this.props;
-    height = Number.parseInt(value);
-    onChangeHeight(height);
+    let { onChangeHeight } = this.props;
+    onChangeHeight(value);
   }
 
   onGenderSelected(value) {
@@ -63,12 +63,25 @@ class App extends Component {
     onChangeGender(gender);
   }
 
+  getBMI() {
+    let { weight, height, getBMIResult } = this.props;
+    getBMIResult({ weight, height });
+  }
+
   toggleModal() {
-    console.log('show or hide modal');
+    let { isModalVisible, changeModalVisibility } = this.props;
+    changeModalVisibility(!isModalVisible);
   }
 
   render() {
-    const { age, weight, height } = this.props;
+    const {
+      age,
+      weight,
+      height,
+      gender,
+      bmiResult,
+      isModalVisible
+    } = this.props;
 
     return (
       <View style={globalStyles.page}>
@@ -119,11 +132,15 @@ class App extends Component {
             <CustomButton
               title="CALCULATE"
               icon="heart"
-              onPressHandler={this.toggleModal}
+              onPressHandler={this.getBMI}
             />
           </View>
         </View>
-        {/* <ResultModal isVisible={isModalVisible} /> */}
+        <ResultModal
+          data={bmiResult}
+          isVisible={isModalVisible}
+          onPressBackdrop={this.toggleModal}
+        />
       </View>
     );
   }

@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import * as Colors from './colors';
 
 export const globalStyles = StyleSheet.create({
   page: {
@@ -31,7 +32,7 @@ export const globalStyles = StyleSheet.create({
     margin: 10,
     justifyContent: 'center',
     backgroundColor: '#fff',
-    elevation: 3
+    elevation: 5
   },
   cardTitle: {
     alignSelf: 'center',
@@ -76,5 +77,43 @@ export const globalStyles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     marginLeft: 8
+  },
+  bmiModalContainer: {
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 16,
+    elevation: 1,
+    marginHorizontal: 32,
+    paddingTop: 24,
+    paddingBottom: 44
+  },
+  bmiResult: {
+    fontSize: 66,
+    color: '#000',
+    fontWeight: '800'
+  },
+  bmiDiagnostic: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#444',
+    color: '#FCA903'
+  },
+  bmiMessage: {
+    color: '#444',
+    fontSize: 16,
+    fontWeight: 'bold',
+    fontStyle: 'italic'
+  },
+  normal: {
+    color: Colors.SUCCESS
+  },
+  overweight: {
+    color: Colors.WARNING
+  },
+  underweight: {
+    color: Colors.DANGER
+  },
+  obesity: {
+    color: Colors.DANGER
   }
 });
